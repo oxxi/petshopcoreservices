@@ -1,4 +1,4 @@
-package com.repositories.entities;
+package com.jramos.petshopcoreservices.domain;
 
 import lombok.*;
 
@@ -6,17 +6,18 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+
+
+@Entity
+@Table(name = "Documents")
 @Getter
 @Setter
 @NoArgsConstructor
-
 @ToString
-@Entity
-@IdClass(DocumentsEntity.class)
 public class DocumentsEntity implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Id

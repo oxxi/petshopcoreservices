@@ -1,4 +1,4 @@
-package com.repositories.entities;
+package com.jramos.petshopcoreservices.domain;
 
 
 import lombok.*;
@@ -10,17 +10,16 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-@Getter
-@Setter
-@NoArgsConstructor
 
 @Table(name = "Inventory")
 @Entity
-@IdClass(InventoryEntity.class)
+@Getter
+@Setter
+@NoArgsConstructor
 public class InventoryEntity implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Id

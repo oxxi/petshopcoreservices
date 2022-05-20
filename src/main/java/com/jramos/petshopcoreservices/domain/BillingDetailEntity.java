@@ -1,7 +1,6 @@
-package com.repositories.entities;
+package com.jramos.petshopcoreservices.domain;
 
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,16 +8,17 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Getter
-@Setter
-@NoArgsConstructor
+
 
 @Table(name = "BillingDetail")
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class BillingDetailEntity implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long productId;

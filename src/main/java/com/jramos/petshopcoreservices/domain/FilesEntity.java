@@ -1,4 +1,4 @@
-package com.repositories.entities;
+package com.jramos.petshopcoreservices.domain;
 
 import lombok.*;
 
@@ -7,17 +7,17 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+
+
+@Entity
+@Table(name = "Files")
 @Getter
 @Setter
 @NoArgsConstructor
-
-@Table(name = "Files")
-@Entity
-@IdClass(FilesEntity.class)
 public class FilesEntity implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Id
@@ -45,7 +45,6 @@ public class FilesEntity implements Serializable {
     public int hashCode() {
         return Objects.hash(id, petId, Comments, type, created);
     }
-
 
 
 }

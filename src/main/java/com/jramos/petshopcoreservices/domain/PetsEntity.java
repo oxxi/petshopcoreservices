@@ -1,22 +1,25 @@
-package com.repositories.entities;
+package com.jramos.petshopcoreservices.domain;
 
 
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
+
+
+
+@Entity
+@Table(name = "Pets")
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString()
-
-@Table(name = "Pets")
-@Entity
-public class PetsEntity {
+public class PetsEntity implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NonNull

@@ -1,20 +1,22 @@
-package com.repositories.entities;
+package com.jramos.petshopcoreservices.domain;
 
 
 import lombok.*;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
+
+@Entity
+@Table(name = "Parameters")
 @Getter
 @Setter
 @NoArgsConstructor
-
-@Table(name = "Parameters")
-@Entity
-public class ParametersEntity {
+public class ParametersEntity  implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -1,4 +1,4 @@
-package com.repositories.entities;
+package com.jramos.petshopcoreservices.domain;
 
 import lombok.*;
 
@@ -9,16 +9,17 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
-@Getter
-@Setter
-@NoArgsConstructor
+
 
 @Table(name = "Billing")
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class BillingEntity implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NonNull

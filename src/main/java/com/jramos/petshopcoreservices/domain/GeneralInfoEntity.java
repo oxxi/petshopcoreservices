@@ -1,21 +1,23 @@
-package com.repositories.entities;
+package com.jramos.petshopcoreservices.domain;
 
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+
+@Entity
+
+@Table(name = "General")
 @Getter
 @Setter
 @NoArgsConstructor
-
-@Table(name = "General")
-@Entity
-public class GeneralInfoEntity {
+public class GeneralInfoEntity implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NonNull

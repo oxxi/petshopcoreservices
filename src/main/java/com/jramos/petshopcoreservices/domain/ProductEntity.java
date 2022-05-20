@@ -1,4 +1,10 @@
-package com.repositories.entities;
+package com.jramos.petshopcoreservices.domain;
+
+import lombok.*;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import lombok.*;
 
@@ -8,16 +14,16 @@ import java.time.LocalDateTime;
 
 
 @Entity
+
+@Table(name="Products")
 @NoArgsConstructor
 @Getter
 @Setter
-
 @ToString()
-@Table(name="Products")
 public class ProductEntity implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NonNull
