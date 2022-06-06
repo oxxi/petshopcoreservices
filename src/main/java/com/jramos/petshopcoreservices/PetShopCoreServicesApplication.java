@@ -1,6 +1,7 @@
 package com.jramos.petshopcoreservices;
 
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,7 +32,7 @@ public class PetShopCoreServicesApplication {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.jramos.petshopcoreservices.controllers"))
+                .apis(RequestHandlerSelectors.basePackage("com.jramos.petshopcoreservices"))
                 .paths(PathSelectors.any())
                 .build();
     }

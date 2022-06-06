@@ -1,13 +1,11 @@
 package com.jramos.petshopcoreservices.services;
 
 
-import com.jramos.petshopcoreservices.PetShopCoreServicesApplication;
 import com.jramos.petshopcoreservices.domain.ProductEntity;
 import com.jramos.petshopcoreservices.repositories.IProductsRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
