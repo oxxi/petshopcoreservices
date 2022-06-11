@@ -1,30 +1,64 @@
 package com.jramos.petshopcoreservices.services;
 
 
-import com.jramos.petshopcoreservices.domain.ProductEntity;
+import com.jramos.petshopcoreservices.Models.ProductosModels;
 import com.jramos.petshopcoreservices.repositories.IProductsRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.jramos.petshopcoreservices.services.interfaces.IProductService;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
-public class ProductService {
+public class ProductService  implements IProductService {
 
-    private static final Logger log = LoggerFactory.getLogger(ProductService.class);
+
     private final IProductsRepository _productosRepo;
 
-    @Autowired
+
     public ProductService(IProductsRepository productsRepository) {
         _productosRepo = productsRepository;
     }
-     public String[] ListOfServices()
-     {
-         List<ProductEntity> productos = _productosRepo.findAll();
-         log.info("Size productos: " +productos.size());
-         return new String[]{"Test1", "Test2"};
-     }
 
+
+    @Override
+    public Collection<ProductosModels> getAll() {
+
+        return _productosRepo.findAll().stream().map(x->{
+            ProductosModels model = new ProductosModels();
+            model.setId(x.getId().intValue());
+            model.setDescripcion(x.getDescription());
+            model.setNombre(x.getName());
+            model.setFechaCreado(x.getCreated());
+
+            return model;
+        }).collect(Collectors.toList());
+
+    }
+
+    @Override
+    public ProductosModels getById(Long id) {
+        return null;
+    }
+
+    @Override
+    public ProductosModels getByCategory(Long id) {
+        return null;
+    }
+
+    @Override
+    public ProductosModels update(ProductosModels producto) {
+        return null;
+    }
+
+    @Override
+    public Collection<ProductosModels> updateBulk(List<ProductosModels> productos) {
+        return null;
+    }
+
+    @Override
+    public ProductosModels save(ProductosModels producto) {
+        return null;
+    }
 }

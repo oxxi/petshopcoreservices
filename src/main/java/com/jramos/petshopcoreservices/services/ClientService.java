@@ -25,7 +25,7 @@ public class ClientService implements IClientService {
     @Override
     public Collection<ClienteModels> getAll() {
 
-        List<ClienteModels> models = _clientRepository.findAll().stream().map(x-> {
+        return  _clientRepository.findAll().stream().map(x-> {
             ClienteModels model = new ClienteModels();
             model.setFirstName(x.getFirstName());
             model.setLastName(x.getSecondName());
@@ -35,7 +35,7 @@ public class ClientService implements IClientService {
             return model;
         }).collect(Collectors.toList());
 
-        return models;
+
     }
 
     @Override
@@ -43,7 +43,7 @@ public class ClientService implements IClientService {
     {
        var entity =  _clientRepository.findById(id).orElse(null);
 
-       if(entity == null) return null;
+        if(entity == null){ return null;}
 
         var result = new ClienteModels();
         result.setFirstName(entity.getFirstName());

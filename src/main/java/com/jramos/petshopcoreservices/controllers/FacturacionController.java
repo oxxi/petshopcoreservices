@@ -1,17 +1,39 @@
 package com.jramos.petshopcoreservices.controllers;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+
+import com.jramos.petshopcoreservices.Models.FacturaModels;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.function.EntityResponse;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/facturacion")
 public class FacturacionController {
 
-    @ResponseBody
-    String Facturacion()
+
+
+    @GetMapping("/{id}")
+    public EntityResponse<?> GetById(@PathVariable Long id)
     {
-        return "";
+
+
+        return null;
     }
+
+    @PostMapping("/generate")
+    public EntityResponse<?> GenerateBilling(@Valid @RequestBody FacturaModels model)
+    {
+
+        return null;
+    }
+
+    @GetMapping("detail/{id}")
+    public EntityResponse<?> ShowBillingDetail(@PathVariable Long id)
+    {
+
+        return  null;
+    }
+
+
 }

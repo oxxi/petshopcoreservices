@@ -7,7 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-
+import java.util.Set;
 
 
 @Entity
@@ -32,10 +32,16 @@ public class ClientsEntity implements Serializable {
 
     private long phoneNumber;
 
+
     private String email;
 
     private String otherPhoneNumbers;
     @CreationTimestamp
     private LocalDateTime created;
+
+    @OneToMany(mappedBy = "client",cascade = CascadeType.ALL)
+    private Set<PetsEntity> pets;
+
+
 
 }

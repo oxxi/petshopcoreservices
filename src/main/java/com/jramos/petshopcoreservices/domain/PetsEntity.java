@@ -26,9 +26,6 @@ public class PetsEntity implements Serializable {
     private String name;
 
     @NonNull
-    private Long ownerId;
-
-    @NonNull
     private int typeId;
 
     @NonNull
@@ -44,4 +41,10 @@ public class PetsEntity implements Serializable {
 
     @NonNull
     private LocalDateTime created;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id", nullable = true)
+    private ClientsEntity client;
+
+
 }

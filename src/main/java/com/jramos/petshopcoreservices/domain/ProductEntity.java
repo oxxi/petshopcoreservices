@@ -6,11 +6,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-import lombok.*;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import java.time.LocalDateTime;
+import org.hibernate.annotations.CreationTimestamp;
+
+
 
 
 @Entity
@@ -52,7 +51,7 @@ public class ProductEntity implements Serializable {
 
     private String measure;
 
-    @NonNull
+    @CreationTimestamp
     private LocalDateTime created;
 
 

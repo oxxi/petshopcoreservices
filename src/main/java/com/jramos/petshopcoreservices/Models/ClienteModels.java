@@ -6,7 +6,7 @@ import lombok.ToString;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+
 
 @Getter
 @Setter
@@ -25,6 +25,5 @@ public class ClienteModels {
 
 
     @NotNull(message = "Teléfono es un campo obligatorio")
-    @Pattern(regexp = "^\\{0-9}?$", message = "Número de teléfono no debe contener caracteres especiales")
     private String principalPhoneNumber;
 }

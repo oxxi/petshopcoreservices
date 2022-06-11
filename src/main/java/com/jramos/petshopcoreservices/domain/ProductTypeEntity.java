@@ -3,6 +3,7 @@ package com.jramos.petshopcoreservices.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ProductTypeEntity {
+public class ProductTypeEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,17 +27,7 @@ public class ProductTypeEntity {
     @NonNull
     private String description;
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public long getId() {
         return id;
@@ -46,9 +37,6 @@ public class ProductTypeEntity {
         return name;
     }
 
-    public String getDescription() {
-        return description;
-    }
 
     @OneToMany(mappedBy = "productType",cascade = CascadeType.ALL)
     private Set<ProductEntity> products = new HashSet<>();
