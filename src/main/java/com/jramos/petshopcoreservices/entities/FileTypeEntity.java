@@ -1,7 +1,6 @@
-package com.jramos.petshopcoreservices.domain;
+package com.jramos.petshopcoreservices.entities;
 
 
-import lombok.*;
 /*
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,6 +1,6 @@
 package com.jramos.petshopcoreservices.repositories;
 
-import com.jramos.petshopcoreservices.domain.ProductEntity;
+import com.jramos.petshopcoreservices.entities.ProductEntity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

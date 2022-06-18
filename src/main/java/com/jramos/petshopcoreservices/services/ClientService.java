@@ -3,7 +3,7 @@ package com.jramos.petshopcoreservices.services;
 
 import com.jramos.petshopcoreservices.Models.ClienteModels;
 
-import com.jramos.petshopcoreservices.domain.ClientsEntity;
+import com.jramos.petshopcoreservices.entities.ClientsEntity;
 import com.jramos.petshopcoreservices.repositories.IClientsRepository;
 import com.jramos.petshopcoreservices.services.interfaces.IClientService;
 import org.springframework.stereotype.Service;

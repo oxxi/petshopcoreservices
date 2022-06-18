@@ -1,4 +1,4 @@
-package com.jramos.petshopcoreservices.domain;
+package com.jramos.petshopcoreservices.entities;
 
 import lombok.*;
 

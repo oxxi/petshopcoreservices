@@ -1,11 +1,10 @@
 package com.jramos.petshopcoreservices.services;
 
 import com.jramos.petshopcoreservices.Models.BodegaModels;
-import com.jramos.petshopcoreservices.domain.WareHouseEntity;
+import com.jramos.petshopcoreservices.entities.WareHouseEntity;
 import com.jramos.petshopcoreservices.repositories.IWareHouseRepository;
 import com.jramos.petshopcoreservices.services.interfaces.IWareHouseService;
 import org.springframework.stereotype.Service;
-
 import java.util.Collection;
 import java.util.stream.Collectors;
 
