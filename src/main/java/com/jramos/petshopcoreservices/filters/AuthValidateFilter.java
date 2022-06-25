@@ -2,21 +2,17 @@ package com.jramos.petshopcoreservices.filters;
 
 
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import com.jramos.petshopcoreservices.services.JwtService;
 import com.jramos.petshopcoreservices.services.interfaces.IJwtService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,7 +36,6 @@ public class AuthValidateFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         log.info("Do filter ....");
 
-       // if (WhiteList(request)) filterChain.doFilter(request, response);
         try{
            isTokenValid(request);
             String jwtToken = request.getHeader(HEADER).replace(PREFIX, "");

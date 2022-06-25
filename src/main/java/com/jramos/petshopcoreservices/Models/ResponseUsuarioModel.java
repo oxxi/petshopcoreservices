@@ -3,9 +3,6 @@ package com.jramos.petshopcoreservices.Models;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Setter
@@ -25,4 +22,16 @@ public class ResponseUsuarioModel {
     private List<String> Rol;
 
     private List<Long> RolId;
+
+
+    public ResponseUsuarioModel toResponseUsuario(CreateUsuarioModel model)
+    {
+       var result =new  ResponseUsuarioModel();
+       result.setNombre(model.getNombre());
+       result.setNombreUsuario(model.getNombreUsuario());
+       result.setApellido(model.getApellido());
+       result.setCorreo(model.getCorreo());
+       return  result;
+    }
+
 }

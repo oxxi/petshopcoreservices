@@ -37,8 +37,6 @@ public class JwtService implements IJwtService {
         //1h 3600sec
         //4h 14400sec
         //6h 21600sec
-        var inicio = Instant.now(Clock.systemUTC()).toString();
-        var ffin = Instant.now(Clock.systemUTC()).plusSeconds(3600).toString();
         try{
             var lengthRoles = roles.size();
              return JWT.create()
@@ -47,13 +45,8 @@ public class JwtService implements IJwtService {
                               .withClaim("name",userName)
                               .withClaim("fullName", fullName)
                               .withArrayClaim("rol",roles.toArray(new String[lengthRoles]))
-                              .withClaim("init",inicio)
-                              .withClaim("fin",ffin)
-                             .withIssuedAt(Date.from(Instant.now(Clock.systemUTC())))
-                             .withExpiresAt(Date.from(Instant.now(Clock.systemUTC()).plusSeconds(3600)))
-                             // .withIssuedAt(Date.from(Instant.now(Clock.systemUTC()).plusSeconds(-21600))) // se resta 6 horas para tener GMT-6 TODO: Buscar solución mas factible as fecha GMT-6
-                             // .withExpiresAt(Date.from(Instant.now(Clock.systemUTC()).plusSeconds(-21600).plusSeconds(3600)))
-
+                              .withIssuedAt(Date.from(Instant.now(Clock.systemUTC())))//TODO: Buscar solución mas factible as fecha GMT-6
+                              .withExpiresAt(Date.from(Instant.now(Clock.systemUTC()).plusSeconds(3600)))
                               .sign(algorithm);
 
 
