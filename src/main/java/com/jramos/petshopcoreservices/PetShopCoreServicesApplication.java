@@ -9,7 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
+
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.*;
@@ -30,8 +30,7 @@ public class PetShopCoreServicesApplication {
 
     private static final Logger log = LoggerFactory.getLogger(PetShopCoreServicesApplication.class);
     public static final String AUTHORIZATION_HEADER = "Authorization";
-    @Autowired
-    private static  Test t;
+ 
     private ApiInfo apiInfo() {
         return new ApiInfo("Core API",
                 "Api en construcción para petShop",
@@ -77,6 +76,5 @@ public class PetShopCoreServicesApplication {
         SpringApplication.run(PetShopCoreServicesApplication.class, args);
     }
 
-    @Component
-    class Test{}
+
  }
